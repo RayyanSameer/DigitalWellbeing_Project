@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI/CD Pipeline
 
 on:
   push:
@@ -46,3 +46,12 @@ jobs:
       - name: Build
         run: |
           if [ -f package.json ]; then npm run build; else echo "No frontend yet"; fi
+
+  deploy:
+    needs: [backend, frontend]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Trigger Render Deploy Hook
+        run: |
+          curl -X POST "$RENDER_DEPLOY_HOOK"

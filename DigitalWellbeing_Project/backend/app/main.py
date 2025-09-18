@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-from backend.app.main import app
 
 app = FastAPI()
 

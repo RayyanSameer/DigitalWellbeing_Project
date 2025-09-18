@@ -1,0 +1,6 @@
+# Copy this file to terraform.tfvars and fill in your values
+aws_region = "us-east-1"
+project_name = "wellness-app"
+db_username = "postgres"
+db_password = "rayyan@jain"  # Change this!
+environment = "dev"

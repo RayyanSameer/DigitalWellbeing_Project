@@ -6,4 +6,7 @@ alembic
 psycopg2-binary
 python-dotenv
 passlib[bcrypt]
-Flask==2.3.4
+Flask==3.0.3   # or latest stable
+alembic 
+psycopg2-binary
+

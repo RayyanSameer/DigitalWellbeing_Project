@@ -13,13 +13,13 @@
       - postgres_data:/var/lib/postgresql/data
 
   backend:
-    build: ./backend   # looks for Dockerfile inside backend/
+    build: ./backend
     container_name: wellness_backend
     restart: always
     depends_on:
       - db
-    environment:
-      DATABASE_URL: postgresql://postgres:postgres@db:5432/wellness_dev
+    env_file:
+      - .env.docker
     ports:
       - "8000:8000"
 
